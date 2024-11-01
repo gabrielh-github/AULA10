@@ -8,10 +8,22 @@ import Alteracao from "../Paginas/Alteracao";
 import Exclusao from "../Paginas/Exclusao";
 import Erro from "../Paginas/Erro";
 
+import Menu from "./Menu";
 export default function Rotas()
 {
 
 return (
+<BrowserRoutes>
+    <Menu/>
+    <Routes>
+<Route path="/" element ={<Home />} />
+<Route path="/cadastro" element ={<Cadastro />} />
+<Route path="/consulta" element ={<Consulta />} />
+<Route path="/alteracao/:codigo" element ={<Alteracao />} />
+<Route path="/exclusao/:codigo" element ={<Exclusao />} />
+<Route path="*" element ={<Erro />} />
+    </Routes>
+</BrowserRoutes>
 
 
 );
