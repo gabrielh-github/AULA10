@@ -13,7 +13,7 @@ export default function Rotas()
 {
 
 return (
-<BrowserRoutes>
+<BrowserRouter>
     <Menu/>
     <Routes>
 <Route path="/" element ={<Home />} />
@@ -23,7 +23,7 @@ return (
 <Route path="/exclusao/:codigo" element ={<Exclusao />} />
 <Route path="*" element ={<Erro />} />
     </Routes>
-</BrowserRoutes>
+</BrowserRouter>
 
 
 );
