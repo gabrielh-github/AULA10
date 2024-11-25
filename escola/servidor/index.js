@@ -86,6 +86,19 @@ app.put('/alunos/:codigo', (req, res) =>{
 //Rota para excluir usuário
 app.delete('/alunos/:codigo', (req, res) => {
     const {codigo} = req.params;
-    const sql = 'DELETE FROM alunos whe parei aaqui'
-})
 
+    const sql = 'DELETE FROM alunos WHERE codigo = ?';
+
+    db.query(sql, [codigo], (err) => {
+        if (err) {
+            return res.status(500).json({error: 'Erro ao excluir aluno'});
+        }
+        res.json({message: 'Aluno excluído com sucesso!'});
+    });
+});
+
+
+//Iniciando o servidor
+app.listen(PORT, () => {
+console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
